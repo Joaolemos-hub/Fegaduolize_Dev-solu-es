@@ -10,33 +10,38 @@ const clients = [
     name: "Fegaduolize Company",
     category: "Site Institucional",
     description: "Landing page corporativa com design moderno e responsivo para empresa de tecnologia.",
-    image: "/portfolio/fegaduolize-company.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FullLogo-DrNr1NjBRSULdVpd227es7z9q14ZJz.png",
     url: "https://fegaduolize-company.vercel.app/",
     isReal: true,
+    isLogo: true,
+    bgColor: "#1e2a4a",
   },
   {
-    name: "TechFlow Solutions",
+    name: "INTERLOG Transportes",
     category: "Sistema de Gestão",
-    description: "Plataforma completa de gestão empresarial com dashboards interativos e relatórios em tempo real.",
-    image: "/portfolio/techflow.jpg",
+    description: "Plataforma completa de gestão logística com rastreamento de frotas e controle de cargas para transportadora.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-wD6i6AGlIYBubVtn3ZfwEsutLdLNNn.png",
     url: "#",
     isReal: false,
+    isLogo: false,
   },
   {
-    name: "Mercado Verde",
-    category: "E-commerce",
-    description: "Loja virtual de produtos orgânicos com sistema de assinaturas e entregas programadas.",
-    image: "/portfolio/mercado-verde.jpg",
+    name: "SLUG Insulfilm",
+    category: "Site Institucional",
+    description: "Site institucional moderno para empresa de películas automotivas com foco em conversão e orçamentos.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-sBmK7Oq7aettgdrRCRDkt36CCpccVi.png",
     url: "#",
     isReal: false,
+    isLogo: false,
   },
   {
-    name: "LogiTrack Pro",
-    category: "Sistema de Logística",
-    description: "Sistema de rastreamento de frotas e otimização de rotas para transportadoras.",
-    image: "/portfolio/logitrack.jpg",
+    name: "Bety Day Coaching",
+    category: "Site Institucional",
+    description: "Landing page para coach profissional com design vibrante e formulário de captação de leads.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-t8sXbgzFdnYSe4Uo0ja1crBbtDyr6L.png",
     url: "#",
     isReal: false,
+    isLogo: false,
   },
 ]
 
@@ -76,12 +81,18 @@ export function Portfolio() {
               className="group relative bg-navy rounded-xl overflow-hidden border border-gold/10 hover:border-gold/30 transition-all duration-300"
             >
               {/* Image */}
-              <div className="relative h-56 overflow-hidden">
+              <div 
+                className="relative h-56 overflow-hidden"
+                style={client.isLogo ? { backgroundColor: client.bgColor } : undefined}
+              >
                 <Image
                   src={client.image}
                   alt={`Projeto ${client.name}`}
                   fill
-                  className="object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  className={client.isLogo 
+                    ? "object-contain p-8 transform group-hover:scale-105 transition-transform duration-500" 
+                    : "object-cover object-top transform group-hover:scale-105 transition-transform duration-500"
+                  }
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
                 
