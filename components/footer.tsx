@@ -22,7 +22,7 @@ const socialLinks = [
   {
     name: "E-mail",
     icon: Mail,
-    href: "fegaduolize.dev@gmail.com",
+    href: "mailto:fegaduolize.dev@gmail.com",
   },
   {
     name: "Portfólio",
