@@ -38,7 +38,7 @@ const clients = [
     name: "Bety Day Coaching",
     category: "Site Institucional",
     description: "Landing page para coach profissional com design vibrante e formulário de captação de leads.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-t8sXbgzFdnYSe4Uo0ja1crBbtDyr6L.png",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-sBmK7Oq7aettgdrRCRDkt36CCpccVi.png",
     url: "#",
     isReal: false,
     isLogo: false,
