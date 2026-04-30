@@ -27,7 +27,7 @@ const socialLinks = [
   {
     name: "Portfólio",
     icon: Globe,
-    href: "https://fegaduolize-dev.vercel.app/",
+    href: "https://v0-fegaduolize-landing-page.vercel.app/",
   },
 ]
 
