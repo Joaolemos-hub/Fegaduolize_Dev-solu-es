@@ -141,7 +141,7 @@ export function About() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-heading text-3xl md:text-4xl font-bold text-off-white leading-tight text-balance"
           >
-            Desenvolvimento com atencao a detalhe, legibilidade e resultado.
+            Desenvolvimento com atenção aos detalhes, legibilidades e resultados.
           </motion.h2>
 
           {/* Right - Description */}
@@ -152,10 +152,10 @@ export function About() {
             className="space-y-6 text-muted-blue leading-relaxed"
           >
             <p>
-              Atuamos criando experiencias web completas, do visual a implementacao, com foco em sites e interfaces que precisam comunicar qualidade de forma imediata.
+              Atuamos criando experiencias web completas, do visual a implementação, com foco em sites e interfaces que precisam comunicar qualidade de forma imediata.
             </p>
             <p>
-              Nossa base esta em React, Next.js e Node.js, mas o que realmente nos move e organizar a apresentacao do produto para que ele pareca mais profissional, mais claro e mais confiavel.
+              Nossa base esta em React, Next.js e Node.js, mas o que realmente nos move e organizar a apresentacao do produto para que ele pareca mais profissional, mais claro e mais confiável.
             </p>
             <p>
               Gostamos de projetos em que design e codigo caminham juntos: a parte tecnica precisa funcionar bem, e a parte visual precisa defender o valor do negocio.
