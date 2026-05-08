@@ -1,31 +1,119 @@
 "use client"
 
 import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useState } from "react"
+import Image from "next/image"
 import { Code, Palette, Zap, Handshake } from "lucide-react"
 
 const features = [
   {
     icon: Code,
-    title: "Código limpo",
-    description: "Estruturamos componentes e estilos para facilitar manutenção e evolução do projeto.",
+    title: "Codigo limpo",
+    description: "Estruturamos componentes e estilos para facilitar manutencao e evolucao do projeto.",
+    image: "/services/codigo-limpo.jpg",
   },
   {
     icon: Palette,
-    title: "Direção visual",
-    description: "Buscamos interfaces que transmitam confiança e pareçam alinhadas ao negócio, não genéricas.",
+    title: "Direcao visual",
+    description: "Buscamos interfaces que transmitam confianca e parecam alinhadas ao negocio, nao genericas.",
+    image: "/services/direcao-visual.jpg",
   },
   {
     icon: Zap,
     title: "Performance",
-    description: "Priorizamos carregamento rápido, responsividade e experiência estável em diferentes telas.",
+    description: "Priorizamos carregamento rapido, responsividade e experiencia estavel em diferentes telas.",
+    image: "/services/performance.jpg",
   },
   {
     icon: Handshake,
     title: "Parceria",
-    description: "Trabalhamos próximo do cliente para transformar referência visual em solução clara e prática.",
+    description: "Trabalhamos proximo do cliente para transformar referencia visual em solucao clara e pratica.",
+    image: "/services/parceria.jpg",
   },
 ]
+
+function FeatureCard({ feature, index, isInView }: { feature: typeof features[0], index: number, isInView: boolean }) {
+  const [isHovered, setIsHovered] = useState(false)
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+      className="group relative overflow-hidden rounded-2xl bg-navy-light border border-gold/10 cursor-pointer"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Background Image - Reveals on Hover */}
+      <div className="absolute inset-0 overflow-hidden">
+        <Image
+          src={feature.image}
+          alt={feature.title}
+          fill
+          className={`object-cover transition-all duration-700 ease-out ${
+            isHovered 
+              ? "opacity-100 scale-110" 
+              : "opacity-0 scale-100"
+          }`}
+        />
+        {/* Overlay gradient */}
+        <div 
+          className={`absolute inset-0 bg-gradient-to-t from-navy via-navy/80 to-navy/40 transition-opacity duration-500 ${
+            isHovered ? "opacity-90" : "opacity-100"
+          }`} 
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 p-8 h-full flex flex-col min-h-[280px]">
+        {/* Icon with circle background */}
+        <div 
+          className={`w-16 h-16 mb-6 rounded-full flex items-center justify-center transition-all duration-500 ${
+            isHovered 
+              ? "bg-gold scale-110 shadow-[0_0_30px_rgba(240,192,64,0.5)]" 
+              : "bg-gold/10"
+          }`}
+        >
+          <feature.icon 
+            className={`w-7 h-7 transition-colors duration-500 ${
+              isHovered ? "text-navy" : "text-gold"
+            }`} 
+          />
+        </div>
+
+        {/* Title */}
+        <h3 
+          className={`font-heading text-xl font-bold mb-3 transition-colors duration-500 ${
+            isHovered ? "text-gold" : "text-off-white"
+          }`}
+        >
+          {feature.title}
+        </h3>
+
+        {/* Description */}
+        <p 
+          className={`text-sm leading-relaxed flex-grow transition-colors duration-500 ${
+            isHovered ? "text-off-white/90" : "text-muted-blue"
+          }`}
+        >
+          {feature.description}
+        </p>
+
+        {/* Decorative corner accents */}
+        <div 
+          className={`absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-gold/50 rounded-tr-lg transition-all duration-500 ${
+            isHovered ? "opacity-100 scale-100" : "opacity-0 scale-75"
+          }`}
+        />
+        <div 
+          className={`absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-gold/50 rounded-bl-lg transition-all duration-500 ${
+            isHovered ? "opacity-100 scale-100" : "opacity-0 scale-75"
+          }`}
+        />
+      </div>
+    </motion.div>
+  )
+}
 
 export function About() {
   const ref = useRef(null)
@@ -41,7 +129,7 @@ export function About() {
           transition={{ duration: 0.6 }}
           className="mb-4"
         >
-          <span className="text-gold text-sm tracking-wider uppercase">Sobre nós</span>
+          <span className="text-gold text-sm tracking-wider uppercase">Sobre nos</span>
         </motion.div>
 
         {/* Main Content Grid */}
@@ -53,7 +141,7 @@ export function About() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-heading text-3xl md:text-4xl font-bold text-off-white leading-tight text-balance"
           >
-            Desenvolvimento com atenção a detalhe, legibilidade e resultado.
+            Desenvolvimento com atencao a detalhe, legibilidade e resultado.
           </motion.h2>
 
           {/* Right - Description */}
@@ -64,37 +152,41 @@ export function About() {
             className="space-y-6 text-muted-blue leading-relaxed"
           >
             <p>
-              Atuamos criando experiências web completas, do visual à implementação, com foco em sites e interfaces que precisam comunicar qualidade de forma imediata.
+              Atuamos criando experiencias web completas, do visual a implementacao, com foco em sites e interfaces que precisam comunicar qualidade de forma imediata.
             </p>
             <p>
-              Nossa base está em React, Next.js e Node.js, mas o que realmente nos move é organizar a apresentação do produto para que ele pareça mais profissional, mais claro e mais confiável.
+              Nossa base esta em React, Next.js e Node.js, mas o que realmente nos move e organizar a apresentacao do produto para que ele pareca mais profissional, mais claro e mais confiavel.
             </p>
             <p>
-              Gostamos de projetos em que design e código caminham juntos: a parte técnica precisa funcionar bem, e a parte visual precisa defender o valor do negócio.
+              Gostamos de projetos em que design e codigo caminham juntos: a parte tecnica precisa funcionar bem, e a parte visual precisa defender o valor do negocio.
             </p>
           </motion.div>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Section Title for Features */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="text-center mb-12"
+        >
+          <h3 className="font-heading text-2xl md:text-3xl font-bold text-off-white mb-4">
+            O que desenvolvemos para voce
+          </h3>
+          <p className="text-muted-blue max-w-2xl mx-auto">
+            Passe o mouse sobre cada card para descobrir mais
+          </p>
+        </motion.div>
+
+        {/* Features Grid with Images */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              className="group"
-            >
-              <div className="w-12 h-12 mb-4 rounded-lg bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors duration-300">
-                <feature.icon className="w-6 h-6 text-gold" />
-              </div>
-              <h3 className="font-heading text-lg font-semibold text-off-white mb-2">
-                {feature.title}
-              </h3>
-              <p className="text-muted-blue text-sm leading-relaxed">
-                {feature.description}
-              </p>
-            </motion.div>
+            <FeatureCard 
+              key={feature.title} 
+              feature={feature} 
+              index={index} 
+              isInView={isInView} 
+            />
           ))}
         </div>
       </div>
