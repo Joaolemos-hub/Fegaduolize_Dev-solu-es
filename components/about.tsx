@@ -9,25 +9,25 @@ const features = [
   {
     icon: Code,
     title: "Codigo limpo",
-    description: "Estruturamos componentes e estilos para facilitar manutencao e evolucao do projeto.",
+    description: "Estruturamos componentes e estilos para facilitar manutenção e evolução do projeto.",
     image: "/services/codigo-limpo.jpg",
   },
   {
     icon: Palette,
-    title: "Direcao visual",
-    description: "Buscamos interfaces que transmitam confianca e parecam alinhadas ao negocio, nao genericas.",
+    title: "Direção visual",
+    description: "Buscamos interfaces que transmitam confiança e pareçam alinhadas ao negocio, não genericas.",
     image: "/services/direcao-visual.jpg",
   },
   {
     icon: Zap,
     title: "Performance",
-    description: "Priorizamos carregamento rapido, responsividade e experiencia estavel em diferentes telas.",
+    description: "Priorizamos carregamento rápido, responsividade e experiência estavel em diferentes telas.",
     image: "/services/performance.jpg",
   },
   {
     icon: Handshake,
     title: "Parceria",
-    description: "Trabalhamos proximo do cliente para transformar referencia visual em solucao clara e pratica.",
+    description: "Trabalhamos proximo do cliente para transformar referencia visual em solução clara e pratica.",
     image: "/services/parceria.jpg",
   },
 ]
@@ -129,7 +129,7 @@ export function About() {
           transition={{ duration: 0.6 }}
           className="mb-4"
         >
-          <span className="text-gold text-sm tracking-wider uppercase">Sobre nos</span>
+          <span className="text-gold text-sm tracking-wider uppercase">Sobre nós</span>
         </motion.div>
 
         {/* Main Content Grid */}
@@ -152,13 +152,13 @@ export function About() {
             className="space-y-6 text-muted-blue leading-relaxed"
           >
             <p>
-              Atuamos criando experiencias web completas, do visual a implementação, com foco em sites e interfaces que precisam comunicar qualidade de forma imediata.
+              Atuamos criando experiências web completas, do visual a implementação, com foco em sites e interfaces que precisam comunicar qualidade de forma imediata.
             </p>
             <p>
-              Nossa base esta em React, Next.js e Node.js, mas o que realmente nos move e organizar a apresentacao do produto para que ele pareca mais profissional, mais claro e mais confiável.
+              Nossa base esta em React, Next.js e Node.js, mas o que realmente nos move e organizar a apresentação do produto para que ele pareça mais profissional, mais claro e mais confiável.
             </p>
             <p>
-              Gostamos de projetos em que design e codigo caminham juntos: a parte tecnica precisa funcionar bem, e a parte visual precisa defender o valor do negocio.
+              Gostamos de projetos em que design e codigo caminham juntos: a parte técnica precisa funcionar bem, e a parte visual precisa defender o valor do negocio.
             </p>
           </motion.div>
         </div>
