@@ -77,7 +77,7 @@ export function Hero() {
             <div className="text-sm text-muted-blue">Projetos publicados</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-gold mb-1">React</div>
+            <div className="text-3xl md:text-4xl font-bold text-gold mb-1">Python</div>
             <div className="text-sm text-muted-blue">Stack principal</div>
           </div>
           <div className="text-center">
