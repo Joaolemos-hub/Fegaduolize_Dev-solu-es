@@ -1,103 +1,90 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { MessageCircle } from "lucide-react"
+import Link from "next/link"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
-      {/* Animated Grid Background */}
-      <div 
-        className="absolute inset-0 grid-background animate-grid-flow hero-gradient-mask" 
-        aria-hidden="true"
-      />
+    <section className="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-16 overflow-hidden">
+      {/* Subtle grid background */}
+      <div className="absolute inset-0 grid-background opacity-30" />
       
-      {/* Radial Gradient Overlay */}
-      <div 
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(17,30,56,0)_0%,rgba(17,30,56,1)_70%)]" 
-        aria-hidden="true"
-      />
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
+        {/* Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-8"
+        >
+          <span className="inline-block px-4 py-2 text-sm text-gold border border-gold/30 rounded-full">
+            Portfólio profissional
+          </span>
+        </motion.div>
 
-      {/* Rotating Diamond */}
-      <div 
-        className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] border-2 border-gold/10 animate-rotate-diamond hidden md:block"
-        aria-hidden="true"
-      />
-      <div 
-        className="absolute right-[-5%] top-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[450px] md:h-[450px] border border-gold/5 animate-rotate-diamond hidden md:block"
-        style={{ animationDelay: "-5s" }}
-        aria-hidden="true"
-      />
+        {/* Main Title */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-off-white leading-tight mb-8 text-balance"
+        >
+          Desenvolvimento web com presença visual mais madura e execução cuidadosa.
+        </motion.h1>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-3xl">
-          {/* Eyebrow */}
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex items-center gap-4 mb-8"
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-lg md:text-xl text-muted-blue leading-relaxed mb-10 max-w-2xl mx-auto"
+        >
+          Somos a <span className="text-gold font-medium">Fegaduolize Dev</span>. Projetamos e desenvolvemos sites e sistemas com foco em clareza, performance e acabamento profissional para negócios que precisam parecer sérios desde o primeiro olhar.
+        </motion.p>
+
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <Link
+            href="#projetos"
+            className="px-8 py-4 bg-transparent border border-gold/50 text-gold rounded-lg hover:bg-gold/10 transition-all duration-300 font-medium"
           >
-            <div className="w-7 h-0.5 bg-gold" aria-hidden="true" />
-            <span className="text-gold text-sm tracking-[0.2em] uppercase font-medium">
-              Soluções Digitais · Curitiba, PR
-            </span>
-          </motion.div>
-
-          {/* Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="font-[var(--font-syne)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-8 text-balance"
+            Ver projetos
+          </Link>
+          <Link
+            href="https://wa.me/5541996411603?text=Olá! Vim pelo site e quero um orçamento."
+            target="_blank"
+            className="px-8 py-4 bg-gold text-navy rounded-lg hover:bg-gold-dark transition-all duration-300 font-semibold"
           >
-            Seu negócio
-            <br />
-            merece um site
-            <br />
-            que{" "}
-            <span className="relative text-gold">
-              vende.
-              <span 
-                className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-gold to-gold-dark rounded-full"
-                aria-hidden="true"
-              />
-            </span>
-          </motion.h1>
+            Falar no WhatsApp
+          </Link>
+        </motion.div>
 
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-muted-blue text-lg md:text-xl font-light max-w-[480px] mb-10 leading-relaxed"
-          >
-            Desenvolvemos sites profissionais, e-commerce e sistemas personalizados 
-            para empresas que precisam crescer — da identidade digital às plataformas de logística.
-          </motion.p>
-
-          {/* Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex flex-wrap gap-4"
-          >
-            <a
-              href="#contato"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-navy font-semibold rounded-full hover:bg-gold-dark hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(240,192,64,0.4)] transition-all duration-300"
-            >
-              <MessageCircle className="w-5 h-5" aria-hidden="true" />
-              Solicitar Orçamento
-            </a>
-            <a
-              href="#servicos"
-              className="inline-flex items-center gap-2 px-8 py-4 text-gold font-medium hover:text-gold-dark transition-colors duration-300 underline underline-offset-4"
-            >
-              Ver serviços →
-            </a>
-          </motion.div>
-        </div>
+        {/* Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-20 grid grid-cols-3 gap-8 max-w-lg mx-auto"
+        >
+          <div className="text-center">
+            <div className="text-3xl md:text-4xl font-bold text-gold mb-1">4+</div>
+            <div className="text-sm text-muted-blue">Projetos publicados</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl md:text-4xl font-bold text-gold mb-1">React</div>
+            <div className="text-sm text-muted-blue">Stack principal</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl md:text-4xl font-bold text-gold mb-1">100%</div>
+            <div className="text-sm text-muted-blue">Responsivo</div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )
