@@ -1,11 +1,9 @@
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
-import { StatsBar } from "@/components/stats-bar"
-import { Services } from "@/components/services"
+import { About } from "@/components/about"
 import { Portfolio } from "@/components/portfolio"
-import { WhyUs } from "@/components/why-us"
-import { Process } from "@/components/process"
-import { CTA } from "@/components/cta"
+import { Tools } from "@/components/tools"
+import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -13,12 +11,10 @@ export default function Home() {
     <main className="min-h-screen bg-navy">
       <Navbar />
       <Hero />
-      <StatsBar />
-      <Services />
+      <About />
       <Portfolio />
-      <WhyUs />
-      <Process />
-      <CTA />
+      <Tools />
+      <Contact />
       <Footer />
     </main>
   )
