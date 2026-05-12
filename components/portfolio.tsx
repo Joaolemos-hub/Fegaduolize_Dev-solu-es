@@ -11,7 +11,7 @@ const projects = [
     description: "Landing page corporativa com design moderno e responsivo para empresa de tecnologia.",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-bUMjUwbEVWQ6ezcxYaoiiLztqU6kQz.png",
     url: "https://fegaduolize-company.vercel.app/",
-    tags: ["Next.js", "React", "Tailwind"],
+    tags: ["Next.js", "React", "CSS"],
     isLive: true,
   },
   {
@@ -36,6 +36,14 @@ const projects = [
     image: "/portfolio/black-orange.jpg",
     url: "#",
     tags: ["React", "Node.js", "WebSocket"],
+    isLive: false,
+  },
+  {
+    name: "Burn-Out",
+    description: "A Burn-Out Performance Sound e referencia em som automotivo na regiao de Pinhais-PR e Grande Curitiba.",
+    image: "/portfolio/burn-out.jpg",
+    url: "#",
+    tags: ["React", "Node.js", "CSS"],
     isLive: false,
   },
 ]
