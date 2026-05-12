@@ -54,7 +54,7 @@ export function Portfolio() {
 
   return (
     <section id="projetos" ref={ref} className="py-24 px-6 bg-navy-light">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Section Label */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
